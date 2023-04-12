@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>WEB I - Exercício 02</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+    function novoTexto() {
+        $('#texto').html($('#entrada').val())
+        /* document.getElementById('texto').innerHTML = document.getElementById('entrada').value */
+    }
+    function mudarParaVermelho() {
+        $('#texto').css('color', 'red')
+        /* document.getElementById('texto').style.color = 'red' */
+    }
+    function mudarParaAzul() {
+        $('#texto').css('color', 'blue')
+        /* document.getElementById('texto').style.color = 'blue' */
+    }
+    function mudarParaAmarelo() {
+        $('#texto').css('color', 'yellow')
+        /* document.getElementById('texto').style.color = 'yellow' */
+    }
+    function reset() {
+        $('#texto').css('color', 'black')
+        /* document.getElementById('texto').style.color = 'black' */
+    }
+    window.onload = function () {
+        $('#entrada').bind('keyup', novoTexto)
+/*         document.getElementById('entrada').addEventListener('keyup', novoTexto)
+ */    }
+</script>
+
+<body>
+    <div class="container">
+
+        <h1>Brincando com Bootstrap e jQuery</h1>
+
+        <div class="input-group mb-3">
+            <button onclick="mudarParaVermelho()" type="button" class="btn btn-danger">Vermelho</button>
+            <button onclick="mudarParaAzul()" type="button" class="btn btn-primary">Azul</button>
+            <button onclick="mudarParaAmarelo()" type="button" class="btn btn-warning">Amarelo</button>
+            <button onclick="reset()" type="button" class="btn btn-light">Reset</button>
+            <input type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-default" id="entrada" placeholder="Digite aqui seu texto...">
+        </div>
+
+        <div class="text-bg-info p-3 rounded">
+            <h1 id="texto">SEU TEXTO</h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
