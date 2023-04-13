@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    <title>Formulário de Inclusão de Jogos</title>
+</head>
+
+<body>
+    <script>
+        var codigo = 0
+
+        function inserirJogo() {
+            codigo++;
+            $('#corpoTabela').html($('#corpoTabela').html() + '<tr>' + '<th scope="row">' + codigo + '</th>' + '<td>' + $('#jogo').val() + '</td>' + '<td>' + $('#categoria').val() + '</td>' + '</tr>')
+        }
+
+        function limparInputs() {
+            $('#jogo').val('')
+            $('#categoria').val('')
+        }
+    </script>
+
+    <style>
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        th,
+        td,
+        h3 {
+            color: white
+        }
+
+        body {
+            text-align: center;
+        }
+
+        .botao {
+            width: 100px;
+            text-align: center;
+        }
+    </style>
+
+    <div class="container">
+        <div class="text-bg-primary p-3 rounded">
+            <h1>JOGOS INTERESTELARES</h1>
+        </div>
+        <br></br>
+        <div class="text-bg-primary p-3 rounded">
+            <h4>Formulário de Inclusão de Jogos</h4>
+            <div class="input-group mb-3">
+                <span class="input-group-text btn-block botao" id="inputGroup-sizing-default"
+                    sytle="text-align: center">Jogo</span>
+                <input type=" text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" placeholder="Digite o nome do jogo..." id="jogo"
+                    maxlength="50">
+
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text btn-block botao" id="inputGroup-sizing-default">Categoria</span>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default" placeholder="Digite o nome da categoria..."
+                    id="categoria" maxlength="100">
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-light" onclick="inserirJogo()">Salvar</button>
+                <button type="button" class="btn btn-outline-light" onclick="limparInputs()">Limpar</button>
+                <button type="button" class="btn btn-outline-light"><a href="./index.html">Voltar</a></button>
+            </div>
+            <hr>
+            <h5>JOGOS CADASTRADOS</h5>
+            <table>
+                <tbody id="tabela">
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Jogo</th>
+                        <th scope="col">Categoria</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                </tbody>
+            </table>
+        </div>
+</body>
+
+</html>
