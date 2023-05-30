@@ -12,25 +12,13 @@
 	integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
 	crossorigin="anonymous">
 <title>SCV - Adicionar</title>
-<script>
-function alerta() {
-	alert("Por favor, preenchar todos os campos")
-	break
-}
-function verificarVazio() {
-	var verificar = document.forms["id"]["nome"]["marca"].value;
-	if(verificar == "") {
-		alerta()
-	}
-}
-</script>
 </head>
 <body>
 	<div class="container text-center">
 		<div class="text-bg-success p-3 rounded">
 			<h4>SCV - Sistema de Cadastramento Veicular</h4>
 			<br></br>
-			<h5>Cadastrar Veículo</h5>
+			<h5>Cadastrar VeÃ­culo</h5>
 			<form action="addCarro">
 				ID: <input type="text" name="id" required> Nome: <input type="text"
 					name="nome" required> Marca: <input type="text" name="marca" required>
